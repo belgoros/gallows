@@ -1,19 +1,19 @@
 defmodule GallowsWeb.HangmanView do
   use GallowsWeb, :view
 
-  @responses = %{
+  @responses %{
     :won          => { :success, "You won!"},
     :lost         => { :danger, "You Lost!"},
     :good_guess   => { :success, "Good guess!"},
-    :bad_guess    => { :waning, "Bad guess!"},
-    :already_used => { :info, "You already guessed that"}
+    :bad_guess    => { :warning, "Bad guess!"},
+    :already_used => { :info, "You already guessed that"},
   }
   def game_state(state) do
     @responses[state]
     |> alert()
   end
 
-  defp alert(nil), do ""
+  defp alert(nil), do: ""
 
   defp alert({class, message}) do
     """
