@@ -1,4 +1,4 @@
 <section class="phx-hero">
   <h1>Welcome to Hangman!</h1>
-  New Game
+  <%= button("New Game", to: "/hangman")%>
 </section>
